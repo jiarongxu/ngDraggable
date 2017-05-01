@@ -459,9 +459,10 @@ angular.module("ngDraggable", [])
                         });
                         element.css('width', obj.element[0].offsetWidth);
                         element.css('height', obj.element[0].offsetHeight);
+                        var bodyScrollTop = document.getElementsByTagName('body')[0].scrollTop;
 
                         if (_closeToMouse) {
-                          moveElement(obj.event.pageX-_positionPadding, obj.event.pageY-_positionPadding);
+                          moveElement(obj.event.pageX-_positionPadding, obj.event.pageY-_positionPadding-bodyScrollTop);
                         } else {
                           moveElement(obj.tx, obj.ty);
                         }
@@ -473,12 +474,13 @@ angular.module("ngDraggable", [])
 
                         var _tx = obj.tx + obj.dragOffset.left;
                         var _ty = obj.ty + obj.dragOffset.top;
-  		  
-                      if (_closeToMouse) {
-                          moveElement(obj.event.pageX-_positionPadding, obj.event.pageY-_positionPadding);
-                      } else {
+                        var bodyScrollTop = document.getElementsByTagName('body')[0].scrollTop;
+
+                        if (_closeToMouse) {
+                          moveElement(obj.event.pageX-_positionPadding, obj.event.pageY-_positionPadding-bodyScrollTop);
+                        } else {
                           moveElement(_tx, _ty);
-                      }
+                        }
                     }
                 };
                 var onDragEnd = function(evt, obj) {
