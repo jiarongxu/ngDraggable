@@ -459,7 +459,7 @@ angular.module("ngDraggable", [])
                         });
                         element.css('width', obj.element[0].offsetWidth);
                         element.css('height', obj.element[0].offsetHeight);
-                        var bodyScrollTop = document.getElementsByTagName('body')[0].scrollTop;
+                        var bodyScrollTop = document.scrollingElement.scrollTop;
 
                         if (_closeToMouse) {
                           moveElement(obj.event.pageX-_positionPadding, obj.event.pageY-_positionPadding-bodyScrollTop);
@@ -474,7 +474,7 @@ angular.module("ngDraggable", [])
 
                         var _tx = obj.tx + obj.dragOffset.left;
                         var _ty = obj.ty + obj.dragOffset.top;
-                        var bodyScrollTop = document.getElementsByTagName('body')[0].scrollTop;
+                        var bodyScrollTop = document.scrollingElement.scrollTop;
 
                         if (_closeToMouse) {
                           moveElement(obj.event.pageX-_positionPadding, obj.event.pageY-_positionPadding-bodyScrollTop);

@@ -1,6 +1,6 @@
 {
   "name": "@os33/ngdraggable",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "Drag and drop module for Angular JS with support for touch devices",
   "main": "ngDraggable.js",
   "scripts": {
